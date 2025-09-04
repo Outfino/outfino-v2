@@ -1,0 +1,29 @@
+// Outfino V2 Main Style Import File
+// Import order is important for proper cascade
+
+// 1. Variables and functions (no CSS output)
+@import 'variables';
+
+// 2. Base styles and resets
+@import 'base';
+
+// 3. Typography system
+@import 'typography';
+
+// 4. Design elements
+@import 'paint-splatter';
+@import 'animations';
+
+// 5. Components
+@import 'buttons';
+@import 'forms';
+
+// 6. Page-specific styles
+@import 'Home';
+@import 'Privacy';
+
+// 7. Loading state styles
+@import 'LoadingState';
+
+// 8. Utility classes (should be last for override priority)
+@import 'utilities';

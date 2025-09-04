@@ -1,0 +1,285 @@
+.newsletter-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .newsletter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .newsletter-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+
+    .title-main {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .title-line {
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #4FCFF8, #AB5DEC);
+      margin: 0 auto;
+      border-radius: 2px;
+      transform-origin: center;
+    }
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .news-item {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #4FCFF8, #AB5DEC);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(79, 207, 248, 0.2);
+      border-color: rgba(79, 207, 248, 0.3);
+
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+
+    .news-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      .news-category {
+        color: #4FCFF8;
+        font-weight: 600;
+        padding: 4px 10px;
+        background: rgba(79, 207, 248, 0.15);
+        border-radius: 20px;
+      }
+
+      .news-date {
+        color: #888;
+        font-weight: 500;
+      }
+    }
+
+    .news-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .news-description {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &.expanded {
+        -webkit-line-clamp: unset;
+        display: block;
+      }
+    }
+
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #4FCFF8;
+      background: none;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+
+      svg {
+        transition: transform 0.3s ease;
+        
+        &.rotated {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover {
+        color: #AB5DEC;
+        gap: 12px;
+      }
+    }
+  }
+
+  .newsletter-subscribe {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border: 1px solid rgba(79, 207, 248, 0.3);
+    border-radius: 24px;
+    padding: 50px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(79, 207, 248, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .subscribe-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .subscribe-description {
+      font-size: 16px;
+      margin-bottom: 30px;
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+
+      .email-input {
+        flex: 1;
+        padding: 14px 20px;
+        border: 2px solid rgba(79, 207, 248, 0.3);
+        border-radius: 50px;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        font-size: 16px;
+        transition: all 0.3s ease;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        &:focus {
+          outline: none;
+          background: rgba(0, 0, 0, 0.5);
+          border-color: rgba(79, 207, 248, 0.6);
+        }
+      }
+
+      .subscribe-btn {
+        padding: 14px 32px;
+        background: linear-gradient(135deg, #4FCFF8 0%, #AB5DEC 100%);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 8px 20px rgba(79, 207, 248, 0.3);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    .newsletter-title {
+      .title-main {
+        font-size: 36px;
+      }
+    }
+
+    .news-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .newsletter-subscribe {
+      padding: 30px 20px;
+
+      .subscribe-title {
+        font-size: 24px;
+      }
+
+      .subscribe-form {
+        flex-direction: column;
+
+        .subscribe-btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

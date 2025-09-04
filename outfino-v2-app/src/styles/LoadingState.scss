@@ -1,0 +1,110 @@
+// Loading state styles to prevent flashing
+
+.home-container {
+  &.loading {
+    // Don't hide the entire container to allow DOM measurements
+    
+    // Hide all animated elements initially
+    .hero-section,
+    .features-container,
+    .support-section,
+    .awards-section,
+    .newsletter-section,
+    .app-download-section,
+    .app-download,
+    .footer {
+      opacity: 0;
+    }
+  }
+  
+  &.loaded {
+    // Transition is handled by individual components via GSAP
+    
+    // Ensure sections are visible as fallback
+    .hero-section,
+    .features-container,
+    .support-section,
+    .awards-section,
+    .newsletter-section,
+    .app-download-section,
+    .app-download,
+    .footer {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+}
+
+// Ensure video doesn't autoplay before loading complete
+.loading .hero-video {
+  opacity: 0;
+}
+
+// Prevent FOUC (Flash of Unstyled Content)
+.video-background,
+.hero-title,
+.hero-subtitle,
+.cta-button,
+.style-tip,
+.scroll-indicator,
+.feature-heading,
+.feature-description,
+.phone-mockup,
+.style-tag,
+.chat-message,
+.ai-core,
+.particle,
+.paint-blob {
+  opacity: 0;
+}
+
+// After loading complete, let animations handle visibility
+.loaded {
+  // Ensure major sections are visible even if GSAP animations fail
+  .hero-section,
+  .features-container,
+  .support-section,
+  .awards-section,
+  .newsletter-section,
+  .app-download-section,
+  .footer {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .video-background,
+  .hero-title,
+  .hero-subtitle,
+  .cta-button,
+  .style-tip,
+  .scroll-indicator,
+  .feature-heading,
+  .feature-description,
+  .phone-mockup,
+  .style-tag,
+  .chat-message,
+  .ai-core,
+  .particle,
+  .paint-blob {
+    opacity: 0; // Will be animated to 1 by GSAP
+  }
+}
+
+// Force visibility of Newsletter, Awards and AppDownload elements specifically
+.newsletter-section,
+.awards-section,
+.app-download {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.newsletter-section .newsletter-title,
+.newsletter-section .news-item,
+.awards-section .awards-title,
+.awards-section .award-card-item,
+.app-download .app-download-title,
+.app-download .app-download-description,
+.app-download .app-store-button {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

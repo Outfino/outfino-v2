@@ -1,0 +1,406 @@
+@import 'variables';
+
+.awards-section {
+  background: var(--color-black);
+  padding: var(--spacing-3xl) var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+
+  @include sm {
+    padding: var(--spacing-4xl) var(--spacing-lg);
+  }
+
+  @include md {
+    padding: var(--spacing-6xl) var(--spacing-xl);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(255, 255, 255, 0.1) 80%,
+      transparent
+    );
+  }
+
+  .awards-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .awards-title {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+    position: relative;
+
+    .title-main {
+      display: block;
+      font-family: var(--font-primary);
+      font-size: 2.5rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-white);
+      margin-bottom: var(--spacing-lg);
+
+      @include md {
+        font-size: 3rem;
+      }
+
+      @include lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .title-line {
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-light-blue), var(--color-purple));
+      margin: 0 auto;
+      border-radius: var(--radius-full);
+    }
+  }
+
+  .awards-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: 0;
+    padding: 0;
+
+    @include sm {
+      gap: var(--spacing-lg);
+    }
+
+    @include md {
+      margin: 0;
+    }
+
+    .scroll-btn {
+      display: none;
+      
+      @include sm {
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all var(--transition-normal) var(--ease-in-out);
+        backdrop-filter: blur(10px);
+      }
+
+      @include md {
+        width: 48px;
+        height: 48px;
+      }
+
+      &:hover:not(.disabled) {
+        background: rgba(79, 207, 248, 0.2);
+        border-color: rgba(79, 207, 248, 0.4);
+        transform: scale(1.1);
+      }
+
+      &.disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      &.scroll-btn-left {
+        left: var(--spacing-sm);
+
+        @include md {
+          left: -60px;
+        }
+      }
+
+      &.scroll-btn-right {
+        right: var(--spacing-sm);
+
+        @include md {
+          right: -60px;
+        }
+      }
+
+      svg {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  .awards-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: var(--spacing-md) 0;
+  }
+
+  .awards-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: var(--spacing-md) 0;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    
+    // Show thin scrollbar on mobile for better UX
+    &::-webkit-scrollbar {
+      height: 4px;
+      display: block;
+      
+      @include sm {
+        display: none;
+      }
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-full);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-full);
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+    
+    @include sm {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .awards-horizontal-track {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+    
+    @include sm {
+      gap: var(--spacing-lg);
+      padding: 0 var(--spacing-lg);
+    }
+
+    @include md {
+      gap: var(--spacing-2xl);
+      padding: 0;
+    }
+  }
+
+  .award-card-item {
+    flex: 0 0 auto;
+    width: calc(100vw - 32px);
+    max-width: 280px;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.01)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    position: relative;
+    transition: all var(--transition-slow) var(--ease-in-out);
+    overflow: hidden;
+    scroll-snap-align: center;
+    
+    @include sm {
+      width: 300px;
+      max-width: none;
+      padding: var(--spacing-2xl);
+    }
+
+    @include md {
+      width: 400px;
+      padding: var(--spacing-3xl);
+    }
+
+    @include lg {
+      width: 450px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, 
+        rgba(79, 207, 248, 0.08) 0%,
+        transparent 60%
+      );
+      opacity: 0;
+      transition: opacity var(--transition-slow) var(--ease-in-out);
+      pointer-events: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-8px);
+        border-color: rgba(79, 207, 248, 0.2);
+        box-shadow: 0 20px 60px rgba(79, 207, 248, 0.15);
+
+      &::before {
+        opacity: 1;
+      }
+
+      .award-badge {
+        transform: scale(1.05);
+      }
+
+      .award-link {
+        color: var(--color-light-blue);
+        border-color: rgba(79, 207, 248, 0.3);
+        
+        svg {
+          transform: translate(3px, -3px);
+        }
+      }
+    }
+    }
+
+    .award-badge-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: var(--spacing-xl);
+      height: 120px;
+      
+      @include sm {
+        height: 150px;
+        margin-bottom: var(--spacing-2xl);
+      }
+
+      @include md {
+        height: 180px;
+      }
+
+      .award-badge {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+        background: white;
+        padding: 15px;
+        border-radius: var(--radius-md);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: transform var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+        
+        @include sm {
+          max-width: 280px;
+          padding: 20px;
+        }
+
+        @include md {
+          max-width: 320px;
+          padding: 25px;
+        }
+      }
+    }
+
+    .award-content {
+      text-align: center;
+
+      .award-title {
+        font-family: var(--font-secondary);
+        font-size: 1.125rem;
+        font-weight: var(--font-weight-bold);
+        text-transform: uppercase;
+        letter-spacing: var(--letter-spacing-wide);
+        color: var(--color-white);
+        margin-bottom: var(--spacing-md);
+        
+        @include sm {
+          font-size: 1.25rem;
+        }
+
+        @include md {
+          font-size: 1.5rem;
+        }
+      }
+
+      .award-description {
+        font-family: var(--font-secondary);
+        font-size: 0.813rem;
+        line-height: var(--line-height-relaxed);
+        color: var(--color-gray-500);
+        margin-bottom: var(--spacing-lg);
+        
+        @include sm {
+          font-size: 0.875rem;
+          margin-bottom: var(--spacing-xl);
+        }
+
+        @include md {
+          font-size: 1rem;
+        }
+      }
+
+      .award-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-lg);
+        flex-wrap: wrap;
+
+        .award-year {
+          display: inline-block;
+          font-family: var(--font-secondary);
+          font-size: 0.75rem;
+          font-weight: var(--font-weight-bold);
+          text-transform: uppercase;
+          letter-spacing: var(--letter-spacing-wider);
+          color: var(--color-purple);
+          padding: var(--spacing-xs) var(--spacing-md);
+          background: rgba(171, 93, 236, 0.15);
+          border-radius: var(--radius-sm);
+          border: 1px solid rgba(171, 93, 236, 0.3);
+        }
+
+        .award-link {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--spacing-xs);
+          color: var(--color-gray-400);
+          text-decoration: none;
+          font-family: var(--font-secondary);
+          font-size: 0.75rem;
+          font-weight: var(--font-weight-bold);
+          text-transform: uppercase;
+          letter-spacing: var(--letter-spacing-wider);
+          transition: all var(--transition-normal) var(--ease-in-out);
+          padding: var(--spacing-xs) var(--spacing-md);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: var(--radius-sm);
+
+          svg {
+            transition: transform var(--transition-normal) var(--ease-out);
+          }
+
+          &:hover {
+            color: var(--color-light-blue);
+            background: rgba(79, 207, 248, 0.05);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+// SCSS alapértelmezett változók
+$primary-color: #000000;
+$text-color: #333;
+$background-color: #00b2ca;
+$container-background: #f9f9f9;
+$border-radius: 8px;
+$padding: 20px;
+$max-width: 800px;
+$gray: #979797;
+
+// Alapértelmezett oldal stílusok
+
+.pageBackground {
+    background-color: $background-color;
+    // Konténer stílusok
+    .container {
+        max-width: $max-width;
+        margin: 0 auto;
+        background-color: $container-background;
+        padding: $padding;
+        // border-radius: $border-radius;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        // Szövegstílusok
+        h1 {
+            color: $primary-color;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .last-updated {
+            color: $gray;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: $primary-color;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: $text-color;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            color: $text-color;
+            margin-bottom: 0.5rem;
+        }
+
+        // Linkek stílusa
+        a {
+            color: $background-color;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        // Táblázatos szekciók
+        strong {
+            font-weight: 600;
+        }
+
+        // Mobilbarát stílusok
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,708 @@
+// Outfino V2 Form Styles
+// Accessible forms with streetwear aesthetic
+
+// ==========================================
+// FORM GROUP
+// ==========================================
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  // Inline variant
+  &.form-group-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    
+    label {
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ==========================================
+// LABELS
+// ==========================================
+
+label,
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-cream);
+  
+  // Required indicator
+  .required,
+  &.required::after {
+    content: '*';
+    color: var(--color-light-blue);
+    margin-left: var(--spacing-xs);
+  }
+  
+  // Optional indicator
+  .optional {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+    text-transform: none;
+    opacity: 0.7;
+    margin-left: var(--spacing-sm);
+  }
+}
+
+// ==========================================
+// BASE INPUT STYLES
+// ==========================================
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+textarea,
+select,
+.form-input {
+  // Reset
+  appearance: none;
+  border: none;
+  outline: none;
+  
+  // Layout
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  
+  // Typography
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-white);
+  
+  // Styling
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  
+  // Transitions
+  transition: all var(--transition-normal) var(--ease-in-out);
+  
+  // Placeholder
+  &::placeholder {
+    color: var(--color-gray-700);
+    opacity: 1;
+  }
+  
+  // Hover
+  &:hover:not(:disabled):not(:focus) {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.07);
+  }
+  
+  // Focus
+  &:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-light-blue);
+    box-shadow: 0 0 0 3px rgba(79, 207, 248, 0.1), var(--glow-blue);
+  }
+  
+  // Disabled
+  &:disabled,
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  // Read only
+  &:read-only {
+    background: rgba(255, 255, 255, 0.02);
+    border-style: dashed;
+  }
+}
+
+// ==========================================
+// TEXTAREA SPECIFIC
+// ==========================================
+
+textarea,
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+  
+  // Fixed height variant
+  &.textarea-fixed {
+    resize: none;
+  }
+  
+  // Auto resize (requires JS)
+  &.textarea-auto {
+    overflow: hidden;
+    resize: none;
+  }
+}
+
+// ==========================================
+// SELECT SPECIFIC
+// ==========================================
+
+select,
+.form-select {
+  cursor: pointer;
+  padding-right: var(--spacing-2xl);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234FCFF8' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-lg) center;
+  background-size: 12px;
+  
+  // Multiple select
+  &[multiple] {
+    padding-right: var(--spacing-lg);
+    background-image: none;
+    height: auto;
+    
+    option {
+      padding: var(--spacing-sm) var(--spacing-md);
+      
+      &:checked {
+        background: var(--color-light-blue);
+        color: var(--color-black);
+      }
+    }
+  }
+}
+
+// ==========================================
+// INPUT SIZES
+// ==========================================
+
+.form-input-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-md);
+}
+
+.form-input-lg {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-xl);
+}
+
+// ==========================================
+// INPUT VARIANTS
+// ==========================================
+
+// Streetwear variant
+.form-input-streetwear {
+  background: var(--color-black);
+  border: 2px solid var(--color-white);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  
+  &:focus {
+    border-color: var(--color-light-blue);
+    box-shadow: var(--shadow-offset);
+  }
+}
+
+// Ghost variant
+.form-input-ghost {
+  background: transparent;
+  border-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  
+  &:focus {
+    border-bottom-color: var(--color-light-blue);
+    box-shadow: none;
+  }
+}
+
+// ==========================================
+// CHECKBOX & RADIO
+// ==========================================
+
+input[type="checkbox"],
+input[type="radio"] {
+  // Hide default
+  appearance: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  
+  // Custom checkbox/radio container
+  & + label {
+    position: relative;
+    padding-left: calc(#{var(--spacing-lg)} + #{var(--spacing-sm)});
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    text-transform: none;
+    letter-spacing: normal;
+    
+    // Custom checkbox/radio
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: all var(--transition-normal) var(--ease-in-out);
+    }
+    
+    // Checkmark/dot
+    &::after {
+      content: '';
+      position: absolute;
+      opacity: 0;
+      transform: scale(0);
+      transition: all var(--transition-normal) var(--ease-elastic);
+    }
+    
+    &:hover::before {
+      border-color: var(--color-light-blue);
+      background: rgba(79, 207, 248, 0.1);
+    }
+  }
+  
+  // Checked state
+  &:checked + label {
+    &::before {
+      background: var(--color-light-blue);
+      border-color: var(--color-light-blue);
+    }
+    
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  // Focus state
+  &:focus-visible + label::before {
+    box-shadow: 0 0 0 3px rgba(79, 207, 248, 0.2);
+  }
+  
+  // Disabled state
+  &:disabled + label {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Checkbox specific
+input[type="checkbox"] {
+  & + label {
+    &::before {
+      border-radius: var(--radius-sm);
+    }
+    
+    &::after {
+      left: 7px;
+      top: 50%;
+      width: 6px;
+      height: 10px;
+      border: 2px solid var(--color-black);
+      border-top: 0;
+      border-left: 0;
+      transform: translateY(-60%) rotate(45deg) scale(0);
+    }
+  }
+  
+  &:checked + label::after {
+    transform: translateY(-60%) rotate(45deg) scale(1);
+  }
+}
+
+// Radio specific
+input[type="radio"] {
+  & + label {
+    &::before {
+      border-radius: 50%;
+    }
+    
+    &::after {
+      left: 6px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      background: var(--color-black);
+      border-radius: 50%;
+      transform: translateY(-50%) scale(0);
+    }
+  }
+  
+  &:checked + label::after {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+// ==========================================
+// SWITCH/TOGGLE
+// ==========================================
+
+.form-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+    &:checked + .switch-slider {
+      background: var(--color-light-blue);
+      
+      &::before {
+        transform: translateX(24px);
+      }
+    }
+    
+    &:focus-visible + .switch-slider {
+      box-shadow: 0 0 0 3px rgba(79, 207, 248, 0.2);
+    }
+  }
+  
+  .switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-normal) var(--ease-in-out);
+    border-radius: var(--radius-full);
+    
+    &::before {
+      position: absolute;
+      content: '';
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background: var(--color-white);
+      transition: all var(--transition-normal) var(--ease-in-out);
+      border-radius: 50%;
+    }
+  }
+}
+
+// ==========================================
+// INPUT GROUP
+// ==========================================
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  
+  .form-input {
+    flex: 1;
+    border-radius: 0;
+    
+    &:first-child {
+      border-top-left-radius: var(--radius-lg);
+      border-bottom-left-radius: var(--radius-lg);
+    }
+    
+    &:last-child {
+      border-top-right-radius: var(--radius-lg);
+      border-bottom-right-radius: var(--radius-lg);
+    }
+  }
+  
+  // Addon
+  .input-group-addon {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wider);
+    
+    &:first-child {
+      border-right: 0;
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    }
+    
+    &:last-child {
+      border-left: 0;
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+  }
+  
+  // Icon addon
+  .input-group-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 var(--spacing-lg);
+    pointer-events: none;
+    color: var(--color-gray-600);
+    
+    &.icon-left {
+      left: 0;
+      
+      ~ .form-input {
+        padding-left: calc(#{var(--spacing-lg)} * 3);
+      }
+    }
+    
+    &.icon-right {
+      right: 0;
+      
+      ~ .form-input {
+        padding-right: calc(#{var(--spacing-lg)} * 3);
+      }
+    }
+  }
+}
+
+// ==========================================
+// VALIDATION STATES
+// ==========================================
+
+.form-group {
+  // Success state
+  &.has-success {
+    .form-input {
+      border-color: var(--color-success);
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+      }
+    }
+    
+    .form-label {
+      color: var(--color-success);
+    }
+  }
+  
+  // Error state
+  &.has-error {
+    .form-input {
+      border-color: var(--color-error);
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+      }
+    }
+    
+    .form-label {
+      color: var(--color-error);
+    }
+  }
+  
+  // Warning state
+  &.has-warning {
+    .form-input {
+      border-color: var(--color-warning);
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+      }
+    }
+    
+    .form-label {
+      color: var(--color-warning);
+    }
+  }
+}
+
+// ==========================================
+// HELP TEXT & MESSAGES
+// ==========================================
+
+.form-help {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  
+  &.help-success {
+    color: var(--color-success);
+  }
+  
+  &.help-error {
+    color: var(--color-error);
+  }
+  
+  &.help-warning {
+    color: var(--color-warning);
+  }
+}
+
+// ==========================================
+// FIELDSET
+// ==========================================
+
+fieldset {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  
+  legend {
+    padding: 0 var(--spacing-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wider);
+    color: var(--color-cream);
+  }
+}
+
+// ==========================================
+// MOBILE OPTIMIZATIONS
+// ==========================================
+
+@media (max-width: 768px) {
+  // Larger touch targets for inputs
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  textarea,
+  select,
+  .form-input {
+    // Minimum height for easy tapping
+    min-height: 48px;
+    
+    // Larger text for better readability
+    font-size: 16px; // Prevents zoom on iOS
+    
+    // More padding for easier tap targets
+    padding: var(--spacing-md) var(--spacing-md);
+    
+    // Disable iOS styling
+    -webkit-appearance: none;
+    
+    // Prevent double-tap zoom
+    touch-action: manipulation;
+  }
+  
+  // Stack inline form groups on mobile
+  .form-group.form-group-inline {
+    flex-direction: column;
+    align-items: stretch;
+    
+    label {
+      margin-bottom: var(--spacing-sm);
+    }
+  }
+  
+  // Full width input groups
+  .input-group {
+    flex-direction: column;
+    
+    .form-input,
+    .input-group-addon {
+      width: 100%;
+      border-radius: var(--radius-lg) !important;
+      
+      &:not(:last-child) {
+        margin-bottom: var(--spacing-sm);
+      }
+    }
+    
+    .input-group-addon {
+      &:first-child {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      &:last-child {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+  
+  // Larger checkboxes and radios for mobile
+  input[type="checkbox"],
+  input[type="radio"] {
+    & + label {
+      padding-left: calc(28px + var(--spacing-sm));
+      min-height: 44px;
+      display: flex;
+      
+      &::before {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  
+  // Adjust checkbox checkmark
+  input[type="checkbox"]:checked + label::after {
+    left: 8px;
+    width: 8px;
+    height: 12px;
+  }
+  
+  // Adjust radio dot
+  input[type="radio"]:checked + label::after {
+    left: 8px;
+    width: 8px;
+    height: 8px;
+  }
+  
+  // Larger switches on mobile
+  .form-switch {
+    width: 56px;
+    height: 32px;
+    
+    .switch-slider::before {
+      width: 26px;
+      height: 26px;
+    }
+    
+    input:checked + .switch-slider::before {
+      transform: translateX(24px);
+    }
+  }
+  
+  // Improve select visibility on mobile
+  select,
+  .form-select {
+    // Larger dropdown arrow
+    background-size: 16px;
+    padding-right: calc(var(--spacing-lg) + 16px);
+  }
+  
+  // Stack fieldsets better on mobile
+  fieldset {
+    padding: var(--spacing-md);
+  }
+}

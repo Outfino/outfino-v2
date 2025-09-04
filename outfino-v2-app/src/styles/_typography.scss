@@ -1,0 +1,330 @@
+// Outfino V2 Typography System
+// Streetwear aesthetic with responsive fluid sizing
+
+
+// ==========================================
+// FONT FAMILIES
+// ==========================================
+
+:root {
+  --font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-secondary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', monospace;
+}
+
+// Font families are defined in _variables.scss
+
+// ==========================================
+// FONT WEIGHTS
+// ==========================================
+
+:root {
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+
+// Font weights are defined in _variables.scss
+
+// ==========================================
+// LINE HEIGHT
+// ==========================================
+
+:root {
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+}
+
+// Line heights are defined in _variables.scss
+
+// ==========================================
+// LETTER SPACING
+// ==========================================
+
+:root {
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+  --letter-spacing-streetwear: 0.2em;  // Extra wide for streetwear aesthetic
+}
+
+// Letter spacing is defined in _variables.scss
+
+// ==========================================
+// FONT SIZES - FLUID RESPONSIVE
+// ==========================================
+
+:root {
+  // Base font size
+  --font-size-base: 16px;
+  
+  // Fluid typography using clamp()
+  // Format: clamp(min, preferred, max)
+  
+  // Display sizes (reduced by 15%)
+  --font-size-display-1: clamp(2.55rem, 4.25vw + 1.7rem, 5.1rem);      // 40.8px -> 81.6px
+  --font-size-display-2: clamp(2.125rem, 3.4vw + 1.275rem, 4.25rem);   // 34px -> 68px
+  --font-size-display-3: clamp(1.7rem, 2.55vw + 1.275rem, 3.4rem);     // 27.2px -> 54.4px
+  
+  // Headings (reduced by 15%)
+  --font-size-h1: clamp(1.7rem, 2.55vw + 0.85rem, 2.975rem);           // 27.2px -> 47.6px
+  --font-size-h2: clamp(1.4875rem, 2.125vw + 0.74375rem, 2.55rem);     // 23.8px -> 40.8px
+  --font-size-h3: clamp(1.275rem, 1.7vw + 0.6375rem, 2.125rem);        // 20.4px -> 34px
+  --font-size-h4: clamp(1.0625rem, 1.275vw + 0.53125rem, 1.7rem);      // 17px -> 27.2px
+  --font-size-h5: clamp(0.95625rem, 0.85vw + 0.425rem, 1.275rem);      // 15.3px -> 20.4px
+  --font-size-h6: clamp(0.85rem, 0.425vw + 0.425rem, 1.0625rem);       // 13.6px -> 17px
+  
+  // Body text
+  --font-size-xl: clamp(1.125rem, 1vw + 0.5rem, 1.25rem);    // 18px -> 20px
+  --font-size-lg: clamp(1rem, 0.5vw + 0.5rem, 1.125rem);     // 16px -> 18px
+  --font-size-md: 1rem;                                       // 16px
+  --font-size-sm: 0.875rem;                                   // 14px
+  --font-size-xs: 0.75rem;                                    // 12px
+  --font-size-xxs: 0.625rem;                                  // 10px
+}
+
+// ==========================================
+// TYPOGRAPHY CLASSES
+// ==========================================
+
+// Display Headings
+.display-1 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-display-1);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tighter);
+}
+
+.display-2 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-display-2);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tighter);
+}
+
+.display-3 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-display-3);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+// Regular Headings
+h1, .h1 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--spacing-lg);
+}
+
+h2, .h2 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--spacing-lg);
+}
+
+h3, .h3 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-md);
+}
+
+h4, .h4 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-md);
+}
+
+h5, .h5 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-sm);
+}
+
+h6, .h6 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-h6);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-sm);
+}
+
+// Body Text
+.text-xl {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+}
+
+// ==========================================
+// STREETWEAR TEXT STYLES
+// ==========================================
+
+.text-streetwear {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-black);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-streetwear);
+  line-height: var(--line-height-tight);
+}
+
+.text-streetwear-outline {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-black);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-streetwear);
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-white);
+  text-stroke: 2px var(--color-white);
+}
+
+.text-bold-caps {
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+// ==========================================
+// GRADIENT TEXT EFFECT
+// ==========================================
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-light-blue), var(--color-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-gradient-cream {
+  background: linear-gradient(135deg, var(--color-cream), var(--color-white));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--color-light-blue), var(--color-dark-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+// ==========================================
+// TEXT UTILITIES
+// ==========================================
+
+// Font Weight
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
+.font-black { font-weight: var(--font-weight-black); }
+
+// Text Transform
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.normal-case { text-transform: none; }
+
+// Text Alignment
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+// Text Decoration
+.underline { text-decoration: underline; }
+.line-through { text-decoration: line-through; }
+.no-underline { text-decoration: none; }
+
+// Letter Spacing
+.tracking-tighter { letter-spacing: var(--letter-spacing-tighter); }
+.tracking-tight { letter-spacing: var(--letter-spacing-tight); }
+.tracking-normal { letter-spacing: var(--letter-spacing-normal); }
+.tracking-wide { letter-spacing: var(--letter-spacing-wide); }
+.tracking-wider { letter-spacing: var(--letter-spacing-wider); }
+.tracking-widest { letter-spacing: var(--letter-spacing-widest); }
+.tracking-streetwear { letter-spacing: var(--letter-spacing-streetwear); }
+
+// Line Height
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-snug { line-height: var(--line-height-snug); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+.leading-loose { line-height: var(--line-height-loose); }
+
+// Text Color
+.text-white { color: var(--color-white); }
+.text-black { color: var(--color-black); }
+.text-cream { color: var(--color-cream); }
+.text-light-blue { color: var(--color-light-blue); }
+.text-purple { color: var(--color-purple); }
+.text-dark-blue { color: var(--color-dark-blue); }
+
+// Truncate
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Line Clamp
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

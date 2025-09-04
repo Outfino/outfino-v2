@@ -1,0 +1,487 @@
+// Outfino V2 Button Component Styles
+// Streetwear aesthetic with bold designs
+
+// ==========================================
+// BASE BUTTON STYLES
+// ==========================================
+
+.btn {
+  // Reset
+  appearance: none;
+  border: none;
+  background: none;
+  
+  // Display
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  
+  // Typography
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  text-decoration: none;
+  white-space: nowrap;
+  
+  // Sizing
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  
+  // Interaction
+  cursor: pointer;
+  transition: all var(--transition-normal) var(--ease-in-out);
+  position: relative;
+  overflow: hidden;
+  
+  // Focus
+  &:focus {
+    outline: none;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-light-blue);
+    outline-offset: 2px;
+  }
+  
+  // Disabled
+  &:disabled,
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  // Active
+  &:active:not(:disabled) {
+    transform: translateY(2px);
+  }
+}
+
+// ==========================================
+// BUTTON SIZES
+// ==========================================
+
+.btn {
+  // Small
+  &.btn-sm {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+  }
+  
+  // Medium (default)
+  &.btn-md {
+    font-size: var(--font-size-md);
+    padding: var(--spacing-md) var(--spacing-xl);
+  }
+  
+  // Large
+  &.btn-lg {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+  }
+  
+  // Extra Large
+  &.btn-xl {
+    font-size: var(--font-size-xl);
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+  }
+}
+
+// ==========================================
+// PRIMARY BUTTON - Light Blue CTA
+// ==========================================
+
+.btn-primary {
+  background: var(--color-light-blue);
+  color: var(--color-black);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-md);
+  
+  // Hover state
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--color-light-blue), var(--color-purple));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), var(--glow-blue);
+  }
+  
+  // Ripple effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width var(--transition-slow) var(--ease-out), height var(--transition-slow) var(--ease-out);
+  }
+  
+  &:active:not(:disabled)::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// ==========================================
+// SECONDARY BUTTON - Purple Border
+// ==========================================
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-purple);
+  border: 2px solid var(--color-purple);
+  
+  &:hover:not(:disabled) {
+    background: var(--color-purple);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-purple);
+  }
+}
+
+// ==========================================
+// STREETWEAR BUTTON - Offset Shadow
+// ==========================================
+
+.btn-streetwear {
+  background: var(--color-black);
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  box-shadow: var(--shadow-offset);
+  font-weight: var(--font-weight-black);
+  letter-spacing: var(--letter-spacing-streetwear);
+  
+  &:hover:not(:disabled) {
+    background: var(--color-white);
+    color: var(--color-black);
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-offset-lg);
+  }
+}
+
+// ==========================================
+// GHOST BUTTON - Minimal
+// ==========================================
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+// ==========================================
+// GRADIENT BUTTON
+// ==========================================
+
+.btn-gradient {
+  background: linear-gradient(135deg, var(--color-light-blue), var(--color-purple));
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 1;
+  
+  // Animated gradient background
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--color-purple), var(--color-dark-blue), var(--color-light-blue));
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+    opacity: 0;
+    transition: opacity var(--transition-normal) var(--ease-in-out);
+    border-radius: inherit;
+    z-index: -1;
+  }
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), var(--glow-blue);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// ==========================================
+// MOBILE TOUCH OPTIMIZATIONS
+// ==========================================
+
+@media (max-width: 768px) {
+  .btn {
+    // Ensure minimum touch target size (44x44px)
+    min-height: 44px;
+    min-width: 44px;
+    
+    // Add touch feedback
+    -webkit-tap-highlight-color: rgba(79, 207, 248, 0.2);
+    
+    // Prevent double-tap zoom
+    touch-action: manipulation;
+    
+    // Larger click area on mobile
+    &::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      bottom: -8px;
+      left: -8px;
+      z-index: -1;
+    }
+    
+    // Adjust sizes for better mobile experience
+    &.btn-sm {
+      min-height: 40px;
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    &.btn-lg, &.btn-xl {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+  
+  // App store buttons should be full width on mobile
+  .btn-app-store {
+    width: 100%;
+    justify-content: center;
+    
+    .btn-app-store-text {
+      flex: 1;
+    }
+  }
+  
+  // Button groups stack on mobile
+  .btn-group:not(.btn-group-horizontal-force) {
+    flex-direction: column;
+    width: 100%;
+    
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+// ==========================================
+// APP STORE BUTTONS
+// ==========================================
+
+.btn-app-store {
+  background: var(--color-white);
+  color: var(--color-black);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  min-width: 180px;
+  box-shadow: var(--shadow-md);
+  
+  // Icon and text layout
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-transform: none;
+  letter-spacing: normal;
+  
+  // Icon styling
+  img, svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+  
+  // Text styling
+  .btn-app-store-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    
+    .small {
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-regular);
+      opacity: 0.8;
+      text-transform: none;
+    }
+    
+    .large {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+  
+  &:hover:not(:disabled) {
+    background: var(--color-gray-900);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  // Dark variant
+  &.btn-app-store-dark {
+    background: var(--color-black);
+    color: var(--color-white);
+    
+    &:hover:not(:disabled) {
+      background: var(--color-gray-100);
+    }
+  }
+}
+
+// ==========================================
+// ICON BUTTON
+// ==========================================
+
+.btn-icon {
+  padding: var(--spacing-md);
+  border-radius: 50%;
+  
+  // Icon only sizing
+  &.btn-icon-sm {
+    padding: var(--spacing-sm);
+    
+    svg, i {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  &.btn-icon-md {
+    padding: var(--spacing-md);
+    
+    svg, i {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  &.btn-icon-lg {
+    padding: var(--spacing-lg);
+    
+    svg, i {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+// ==========================================
+// BUTTON GROUP
+// ==========================================
+
+.btn-group {
+  display: inline-flex;
+  gap: var(--spacing-md);
+  
+  // Connected buttons
+  &.btn-group-connected {
+    gap: 0;
+    
+    .btn {
+      border-radius: 0;
+      
+      &:first-child {
+        border-top-left-radius: var(--radius-lg);
+        border-bottom-left-radius: var(--radius-lg);
+      }
+      
+      &:last-child {
+        border-top-right-radius: var(--radius-lg);
+        border-bottom-right-radius: var(--radius-lg);
+      }
+      
+      &:not(:last-child) {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  
+  // Vertical group
+  &.btn-group-vertical {
+    flex-direction: column;
+    
+    &.btn-group-connected {
+      .btn {
+        &:first-child {
+          border-radius: 0;
+          border-top-left-radius: var(--radius-lg);
+          border-top-right-radius: var(--radius-lg);
+        }
+        
+        &:last-child {
+          border-radius: 0;
+          border-bottom-left-radius: var(--radius-lg);
+          border-bottom-right-radius: var(--radius-lg);
+        }
+        
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// BUTTON UTILITIES
+// ==========================================
+
+.btn {
+  // Full width
+  &.btn-block {
+    width: 100%;
+  }
+  
+  // Rounded
+  &.btn-rounded {
+    border-radius: var(--radius-full);
+  }
+  
+  // Square
+  &.btn-square {
+    border-radius: 0;
+  }
+  
+  // Loading state
+  &.btn-loading {
+    color: transparent;
+    pointer-events: none;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      left: 50%;
+      margin-left: -8px;
+      margin-top: -8px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 0.6s linear infinite;
+    }
+  }
+}

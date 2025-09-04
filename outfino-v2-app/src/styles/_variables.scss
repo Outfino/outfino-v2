@@ -1,0 +1,226 @@
+// Outfino V2 Design System Variables
+// Streetwear aesthetic with black dominant theme
+
+// ==========================================
+// COLOR PALETTE
+// ==========================================
+
+// CSS Custom Properties for runtime access
+:root {
+  // Primary Colors
+  --color-black: #000000;        // Primary background
+  --color-white: #FFFFFF;        // Primary text
+  --color-cream: #FFE6C7;        // Accent highlights
+  
+  // Accent Colors
+  --color-light-blue: #4FCFF8;   // Primary CTA buttons
+  --color-purple: #AB5DEC;       // Secondary accents
+  --color-dark-blue: #024BE8;    // Tertiary accents
+  --color-turquoise: #00b2ca;    // Legacy accent (use sparingly)
+  
+  // Utility Colors
+  --color-gray-100: #1A1A1A;     // Subtle backgrounds
+  --color-gray-200: #2A2A2A;     // Card backgrounds
+  --color-gray-300: #3A3A3A;     // Borders
+  --color-gray-400: #6BA4B8;     // Disabled states - changed to softer blue-gray
+  --color-gray-500: #70ADBD;     // Secondary text - changed to light teal
+  --color-gray-600: #7BB8CC;     // Tertiary text - changed to light blue-gray
+  --color-gray-700: #9AC5D6;     // Placeholder text - adjusted to match
+  --color-gray-800: #CACACA;     // Light borders
+  --color-gray-900: #EAEAEA;     // Light backgrounds
+  
+  // State Colors
+  --color-success: #4CAF50;
+  --color-error: #F44336;
+  --color-warning: #FF9800;
+  --color-info: var(--color-light-blue);
+}
+
+// ==========================================
+// SPACING SCALE
+// ==========================================
+
+:root {
+  // Base spacing unit (4px system)
+  --spacing-base: 4px;
+  
+  // T-shirt sizing (reduced by 15%)
+  --spacing-xs: calc(var(--spacing-base) * 1.7);   // 6.8px
+  --spacing-sm: calc(var(--spacing-base) * 2.55);  // 10.2px
+  --spacing-md: calc(var(--spacing-base) * 3.4);   // 13.6px
+  --spacing-lg: calc(var(--spacing-base) * 5.1);   // 20.4px
+  --spacing-xl: calc(var(--spacing-base) * 6.8);   // 27.2px
+  --spacing-2xl: calc(var(--spacing-base) * 10.2); // 40.8px
+  --spacing-3xl: calc(var(--spacing-base) * 13.6); // 54.4px
+  --spacing-4xl: calc(var(--spacing-base) * 17);   // 68px
+  --spacing-5xl: calc(var(--spacing-base) * 20.4); // 81.6px
+}
+
+// ==========================================
+// BORDER RADIUS
+// ==========================================
+
+:root {
+  --radius-sm: 6.8px;       // Reduced by 15%
+  --radius-md: 10.2px;      // Reduced by 15%
+  --radius-lg: 17px;        // Reduced by 15%
+  --radius-xl: 27.2px;      // Reduced by 15%
+  --radius-2xl: 40.8px;     // Reduced by 15%
+  --radius-full: 9999px;    // Pills (kept same)
+}
+
+// ==========================================
+// TRANSITIONS
+// ==========================================
+
+:root {
+  // Durations
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 400ms;
+  --transition-slower: 600ms;
+  
+  // Timing Functions
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+// ==========================================
+// SHADOWS
+// ==========================================
+
+:root {
+  // Elevation Shadows
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  // Glow Effects
+  --glow-blue: 0 0 20px rgba(79, 207, 248, 0.4), 0 0 40px rgba(79, 207, 248, 0.2);
+  --glow-purple: 0 0 20px rgba(171, 93, 236, 0.4), 0 0 40px rgba(171, 93, 236, 0.2);
+  --glow-cream: 0 0 20px rgba(255, 230, 199, 0.3), 0 0 40px rgba(255, 230, 199, 0.15);
+  
+  // Streetwear Offset Shadow
+  --shadow-offset: 4px 4px 0px rgba(255, 255, 255, 0.1);
+  --shadow-offset-lg: 8px 8px 0px rgba(255, 255, 255, 0.1);
+}
+
+// ==========================================
+// BREAKPOINTS
+// ==========================================
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Media Query Mixins
+@mixin xs {
+  @media (min-width: #{$breakpoint-xs}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$breakpoint-2xl}) {
+    @content;
+  }
+}
+
+// ==========================================
+// Z-INDEX LAYERS
+// ==========================================
+
+:root {
+  --z-negative: -1;
+  --z-base: 0;
+  --z-blob: 1;          // Paint splatter backgrounds
+  --z-content: 10;      // Main content
+  --z-dropdown: 100;    // Dropdowns
+  --z-sticky: 200;      // Sticky elements
+  --z-overlay: 300;     // Overlays
+  --z-modal: 400;       // Modals
+  --z-popover: 500;     // Popovers
+  --z-tooltip: 600;     // Tooltips
+  --z-notification: 700; // Notifications
+  --z-max: 9999;        // Maximum
+}
+
+// ==========================================
+// CONTAINER WIDTHS
+// ==========================================
+
+:root {
+  --container-xs: 100%;
+  --container-sm: 544px;    // Reduced by 15%
+  --container-md: 652.8px;  // Reduced by 15%
+  --container-lg: 870.4px;  // Reduced by 15%
+  --container-xl: 1088px;   // Reduced by 15%
+  --container-2xl: 1305.6px; // Reduced by 15%
+  --container-max: 1632px;  // Reduced by 15%
+}
+
+// ==========================================
+// TYPOGRAPHY
+// ==========================================
+
+:root {
+  --font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-secondary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', monospace;
+  
+  // Font weights
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+  
+  // Line heights
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+  
+  // Letter spacing
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+  --letter-spacing-streetwear: 0.2em;
+}
