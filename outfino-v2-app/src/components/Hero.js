@@ -165,7 +165,7 @@ const Hero = () => {
           preload="auto"
           className="hero-video"
         >
-          <source src="/assets/outfino-commercial.mp4" type="video/mp4" />
+          <source src="https://api.trophien.com/files/shared/Projektek/Stylevise/outfino-commercial.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay"></div>
