@@ -123,8 +123,9 @@ const AppDownload = () => {
               aria-label="Download on the App Store"
             >
               <img 
-                src="/assets/get-apple-store.svg" 
+                src="/assets/get-apple-store.png" 
                 alt="Download on the App Store"
+                className="app-store-img"
               />
             </a>
             
@@ -138,6 +139,7 @@ const AppDownload = () => {
               <img 
                 src="/assets/get-google-play.png" 
                 alt="Get it on Google Play"
+                className="app-store-img"
               />
             </a>
           </div>

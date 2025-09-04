@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -13,14 +13,21 @@ const Hero = () => {
   const videoRef = useRef(null);
   const contentRef = useRef(null);
   const { t } = useLanguage();
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
 
   useEffect(() => {
     // Set initial state for animation
-    gsap.set(['.video-background', '.hero-title', '.hero-subtitle', '.cta-button', '.style-tip', '.scroll-indicator'], {
+    gsap.set(['.video-background', '.hero-title', '.hero-subtitle', '.cta-button', '.style-tip'], {
       opacity: 0,
       visibility: 'visible'
     });
+    
+    // Set scroll indicator separately - don't override its opacity
+    gsap.set('.scroll-indicator', {
+      visibility: 'visible'
+    });
+
 
     // Enhanced Hero Animations
     const tl = gsap.timeline({ delay: 0.2 });
@@ -80,13 +87,11 @@ const Hero = () => {
       ease: 'power3.out'
     }, '-=0.5')
     
-    // Scroll indicator
+    // Scroll indicator - simple slide up without opacity change
     .fromTo('.scroll-indicator', {
-      y: 20,
-      opacity: 0
+      y: 20
     }, {
       y: 0,
-      opacity: 1,
       duration: 1,
       ease: 'power2.out'
     }, '-=0.3');
@@ -151,6 +156,34 @@ const Hero = () => {
     };
   }, []);
 
+  // Separate useEffect for scroll indicator functionality
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      console.log('Scroll Y:', currentScrollY, 'Last:', lastScrollY, 'Show:', showScrollIndicator);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down - hide indicator
+        console.log('Hiding scroll indicator');
+        setShowScrollIndicator(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show indicator
+        console.log('Showing scroll indicator');
+        setShowScrollIndicator(true);
+      }
+      
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showScrollIndicator]);
+
   const styleTips = t('hero.styleTips');
 
   return (
@@ -204,7 +237,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="cta-button app-store"
             >
-              <img src="/assets/get-apple-store.svg" alt="Download on the App Store" />
+              <img src="/assets/get-apple-store.png" alt="Download on the App Store" />
             </a>
           </div>
         </div>
@@ -221,7 +254,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="scroll-indicator">
+      <div className={`scroll-indicator ${showScrollIndicator ? 'visible' : 'hidden'}`}>
         <span className="scroll-text">{t('hero.scrollDown').toUpperCase()}</span>
         <div className="scroll-line"></div>
       </div>

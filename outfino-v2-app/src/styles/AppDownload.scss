@@ -142,26 +142,30 @@
           }
         }
 
-        img {
-          display: block;
-          height: 72px;
-          width: auto;
+        .app-store-img {
+          display: block !important;
+          height: 24px !important;
+          width: auto !important;
+          max-width: 80px !important;
           border: 0 !important;
           outline: 0 !important;
           box-shadow: none !important;
           background: transparent !important;
           padding: 0 !important;
           margin: 0 !important;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
+          -webkit-appearance: none !important;
+          -moz-appearance: none !important;
+          appearance: none !important;
+          transform: scale(0.5) !important;
 
           @include md {
-            height: 88px;
+            height: 28px !important;
+            max-width: 90px !important;
           }
 
           @include lg {
-            height: 96px;
+            height: 32px !important;
+            max-width: 100px !important;
           }
         }
       }
@@ -239,5 +243,23 @@
     50% {
       transform: translateX(100%) translateY(100%) rotate(45deg);
     }
+  }
+}
+
+// Force small size for app store buttons with maximum specificity
+.app-download .app-download-content .app-download-buttons .app-store-button .app-store-img {
+  height: 24px !important;
+  width: auto !important;
+  max-width: 80px !important;
+  transform: scale(0.5) !important;
+  
+  @media (min-width: 768px) {
+    height: 28px !important;
+    max-width: 90px !important;
+  }
+  
+  @media (min-width: 1024px) {
+    height: 32px !important;
+    max-width: 100px !important;
   }
 }

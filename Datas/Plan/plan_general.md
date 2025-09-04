@@ -45,7 +45,7 @@ assets/
 ├── result2.png              # Result screen 2
 ├── f6s-award.png            # F6S award
 ├── f6s-logo-square.svg      # F6S logo
-├── get-apple-store.svg      # App Store button
+├── get-apple-store.png      # App Store button
 ├── get-google-play.png      # Google Play button
 ├── outfino-commercial.mp4   # Commercial video
 └── payment/
