@@ -299,8 +299,9 @@ const Features = () => {
       >
         <div className="feature-content">
           <div className="content-side">
-            <h2 className="feature-heading">
-              {t('features.ai.title')} <span className="gradient-text ai-gradient">{t('features.ai.titleHighlight')}</span>
+            <h2 className="feature-heading ai-heading">
+              <span className="ai-title-line">{t('features.ai.title')}</span>
+              <span className="gradient-text ai-gradient">{t('features.ai.titleHighlight')}</span>
             </h2>
             <p className="feature-description">
               {t('features.ai.description')}

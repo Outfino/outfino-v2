@@ -56,9 +56,9 @@ const hu = {
       }
     },
     ai: {
-      title: "Ismerd meg az AI",
-      titleHighlight: "modellünket",
-      description: "Kapjon személyre szabott divat tippeket azonnal. Hagyja, hogy AI-nk az Önnek szabott öltözetet javasoljon.",
+      title: "Ismerd meg az",
+      titleHighlight: "AI modellünket",
+      description: "Az alkalmazást a saját AI modellünk hajtja, amely megtanulja a stílusodat. Minél többet használod, annál inkább hozzád igazodó javaslatokat és termékajánlatokat kapsz.",
       chatMessages: {
         casual: "Próbáljon egy kényelmes fehér pólót sötét farmerrel és friss tornacipővel. Rétegezzen egy könnyű bomberdzsekivel a tökéletes casual pénteki hangulatért.",
         streetwear: "Túlméretezett grafikus pulóver, cargo nadrág és masszív tornacipő. Adjon hozzá lánc kiegészítőket és crossbody táskát az utcai divat look teljessé tételéhez.",
