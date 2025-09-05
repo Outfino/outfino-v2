@@ -58,7 +58,7 @@ const hu = {
     ai: {
       title: "Ismerd meg az",
       titleHighlight: "AI modellünket",
-      description: "Az alkalmazást a saját AI modellünk hajtja, amely megtanulja a stílusodat. Minél többet használod, annál inkább hozzád igazodó javaslatokat és termékajánlatokat kapsz.",
+      description: "Az alkalmazást saját AI modellünk hajtja, amely megtanulja a stílusodat. Minél többet használod, annál inkább hozzád igazodó javaslatokat és termékajánlásokat kapsz.",
       chatMessages: {
         casual: "Próbáljon egy kényelmes fehér pólót sötét farmerrel és friss tornacipővel. Rétegezzen egy könnyű bomberdzsekivel a tökéletes casual pénteki hangulatért.",
         streetwear: "Túlméretezett grafikus pulóver, cargo nadrág és masszív tornacipő. Adjon hozzá lánc kiegészítőket és crossbody táskát az utcai divat look teljessé tételéhez.",

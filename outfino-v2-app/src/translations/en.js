@@ -56,9 +56,9 @@ const en = {
       }
     },
     ai: {
-      title: "Meet our AI",
-      titleHighlight: "model",
-      description: "Receive personalized fashion tips instantly. Let our AI suggest outfits tailored just for you.",
+      title: "Meet our",
+      titleHighlight: "AI model",
+      description: "The app is powered by our own AI model that learns your style. The more you use it, the more personalized suggestions and product recommendations you'll receive.",
       chatMessages: {
         casual: "Try a relaxed-fit white tee with dark denim and fresh sneakers. Layer with a lightweight bomber for that perfect casual Friday vibe.",
         streetwear: "Oversized graphic hoodie, cargo pants, and chunky sneakers. Add chain accessories and a crossbody bag to complete the streetwear look.",
