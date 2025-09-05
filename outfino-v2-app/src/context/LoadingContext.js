@@ -58,7 +58,9 @@ export const LoadingProvider = ({ children }) => {
           '/assets/result1.png',
           '/assets/result2.png',
           '/assets/get-google-play.png',
-          '/assets/get-apple-store.png'
+          '/assets/get-apple-store.png',
+          '/assets/get-google-play-hu.png',
+          '/assets/get-apple-store-hu.png'
         ];
 
         const imagePromises = criticalImages.map(src => {

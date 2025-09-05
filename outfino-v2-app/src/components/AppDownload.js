@@ -10,7 +10,7 @@ import '../styles/AppDownload.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 const AppDownload = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   useEffect(() => {
     // Force immediate visibility via CSS
     const section = document.querySelector('.app-download');
@@ -123,7 +123,7 @@ const AppDownload = () => {
               aria-label="Download on the App Store"
             >
               <img 
-                src="/assets/get-apple-store.png" 
+                src={currentLanguage === 'hu' ? "/assets/get-apple-store-hu.png" : "/assets/get-apple-store.png"} 
                 alt="Download on the App Store"
                 className="app-store-img"
               />
@@ -137,7 +137,7 @@ const AppDownload = () => {
               aria-label="Get it on Google Play"
             >
               <img 
-                src="/assets/get-google-play.png" 
+                src={currentLanguage === 'hu' ? "/assets/get-google-play-hu.png" : "/assets/get-google-play.png"} 
                 alt="Get it on Google Play"
                 className="app-store-img"
               />

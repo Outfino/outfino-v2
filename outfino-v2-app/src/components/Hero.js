@@ -12,7 +12,7 @@ const Hero = () => {
   const heroRef = useRef(null);
   const videoRef = useRef(null);
   const contentRef = useRef(null);
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
 
@@ -158,31 +158,26 @@ const Hero = () => {
 
   // Separate useEffect for scroll indicator functionality
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-    
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      console.log('Scroll Y:', currentScrollY, 'Last:', lastScrollY, 'Show:', showScrollIndicator);
       
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down - hide indicator
-        console.log('Hiding scroll indicator');
-        setShowScrollIndicator(false);
-      } else if (currentScrollY < lastScrollY) {
-        // Scrolling up - show indicator
-        console.log('Showing scroll indicator');
+      // Only show indicator when user is at the very top of the page (within 100px)
+      if (currentScrollY < 100) {
         setShowScrollIndicator(true);
+      } else {
+        setShowScrollIndicator(false);
       }
-      
-      lastScrollY = currentScrollY;
     };
 
+    // Set initial state
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [showScrollIndicator]);
+  }, []);
 
   const styleTips = t('hero.styleTips');
 
@@ -229,7 +224,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="cta-button google-play"
             >
-              <img src="/assets/get-google-play.png" alt="Get it on Google Play" />
+              <img src={currentLanguage === 'hu' ? "/assets/get-google-play-hu.png" : "/assets/get-google-play.png"} alt="Get it on Google Play" />
             </a>
             <a 
               href="https://apps.apple.com/hu/app/outfino/id6736884918"
@@ -237,7 +232,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="cta-button app-store"
             >
-              <img src="/assets/get-apple-store.png" alt="Download on the App Store" />
+              <img src={currentLanguage === 'hu' ? "/assets/get-apple-store-hu.png" : "/assets/get-apple-store.png"} alt="Download on the App Store" />
             </a>
           </div>
         </div>

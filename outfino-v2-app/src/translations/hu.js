@@ -17,34 +17,37 @@ const hu = {
     aiAdvice: "AI TANÁCSADÁS",
     downloadApp: "LETÖLTÉS",
     aboutOutfino: "AZ OUTFINÓRÓL",
-    partners: "PARTNEREK"
+    partners: "PARTNEREK",
+    awards: "DÍJAK",
+    news: "HÍREK",
+    features: "FUNKCIÓK",
+    aboutApp: "AZ ALKALMAZÁSRÓL"
   },
   hero: {
-    title: "Emelje",
-    titleHighlight: "Stílusát",
-    titleSuffix: "az Outfino-val",
-    subtitle: "Fedezze fel az Önnek tervezett divatot.",
+    title: "Mi írjuk a következő",
+    titleHighlight: "streetwear",
+    titleSuffix: "sztorit",
+    subtitle: "Légy részese a történetünknek.",
     getStarted: "Kezdjük el",
     learnMore: "Tudjon meg többet",
     styleTips: [
-      "Adjon hozzá egy könnyű sálat extra stíluspontokért.",
-      "Fontolja meg a khaki rövidnadrágot a melegebb napokra.",
-      "Változtasson vitorláscipővel a tengeri téma kedvéért",
-      "Egészítse ki megjelenését egy klasszikus órával."
+      "Air Jordan 1 Retro High OG Chicago Lost And Found = instant G.O.A.T.",
+      "Ehhez még egy Nike Tee, nagyot dobna a megjelenéseden 🔥",
+      "Layerelj egy oversize inget a hoodie fölé – és kész a effortless drip."
     ],
     scrollDown: "Görgessen le",
     aboutButton: "Az Outfinóról"
   },
   features: {
     scan: {
-      title: "Szkenelje be",
-      titleHighlight: "Stílusát",
-      description: "Könnyedén rögzítse és elemezze egyedi stílusát bárhol. Bármikor, bárhol - fedezze fel az Önnek tervezett személyre szabott divat betekintéseket!"
+      title: "🛍️ Dropok & ",
+      titleHighlight: "Brandek",
+      description: "Csapj le a legdurvább dropokra! Böngéssz a legnagyobb brandek limitált darabjai között, és vásárolj közvetlenül az appból. Fresh releaseek, exclusive itemek és instant cop – minden egy helyen, ami streetwearben számít."
     },
     analysis: {
-      title: "Ismerjük meg az Ön",
-      titleHighlight: "valódi stílusát",
-      description: "Fedezze fel a személyiségéhez illő stílusokat. Elemezzük az Ön preferenciáit, hogy segítsünk megtalálni az egyedi ízlését tükröző öltözeteket.",
+      title: "👕 Outfit of the ",
+      titleHighlight: "Day",
+      description: "Készíts egy képet a szettedről, és versengj a 11 kategória bármelyikében – legyen az streetwear, vintage vagy minimal. Mérd össze a stílusodat másokkal, nézd meg barátaid összeállításait, fedezz fel új stílusokat és inspirálódj nap mint nap!",
       tags: {
         streetwear: "UTCAI DIVAT",
         casual: "HÉTKÖZNAPI", 
@@ -53,8 +56,8 @@ const hu = {
       }
     },
     ai: {
-      title: "Kérjen tanácsot az",
-      titleHighlight: "AI-től",
+      title: "Ismerd meg az AI",
+      titleHighlight: "modellünket",
       description: "Kapjon személyre szabott divat tippeket azonnal. Hagyja, hogy AI-nk az Önnek szabott öltözetet javasoljon.",
       chatMessages: {
         casual: "Próbáljon egy kényelmes fehér pólót sötét farmerrel és friss tornacipővel. Rétegezzen egy könnyű bomberdzsekivel a tökéletes casual pénteki hangulatért.",
@@ -89,19 +92,19 @@ const hu = {
     title: "DÍJAINK",
     items: {
       topStartup: {
-        title: "Top Startup",
-        description: "Az egyik legnevezettebb innovatív startup a divattechnológiában",
-        year: "2024"
+        title: "#17 az AI-ban",
+        description: "A #17 helyen szerepelünk az F6S Top AI Companies listájában",
+        year: "2025"
       },
       innovation: {
-        title: "Innovációs Díj", 
-        description: "Kiválóság az AI-alapú divat személyre szabásban",
-        year: "2024"
+        title: "#1 a Divatban", 
+        description: "A #1 helyen szerepelünk az F6S Top Fashion Companies listájában",
+        year: "2025"
       },
       bestDesign: {
         title: "Legjobb App Dizájn",
         description: "Kiemelkedő felhasználói élmény és interfész tervezés", 
-        year: "2024"
+        year: "2025"
       }
     },
     viewOnF6S: "MEGTEKINTÉS F6S-EN"

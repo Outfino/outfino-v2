@@ -238,11 +238,8 @@ const Features = () => {
       >
         <div className="feature-content">
           <div className="content-side">
-            <div className="feature-icon">
-              <img src="/assets/camera.png" alt="Camera" />
-            </div>
             <h2 className="feature-heading">
-              {t('features.scan.title')} <span className="gradient-text">{t('features.scan.titleHighlight')}</span>
+              {t('features.scan.title')} <span className="italic-style">{t('features.scan.titleHighlight')}</span>
             </h2>
             <p className="feature-description">
               {t('features.scan.description')}
@@ -251,7 +248,7 @@ const Features = () => {
           <div className="visual-side">
             <div className="phone-mockup floating">
               <div className="phone-glow"></div>
-              <img src="/assets/scan.png" alt="Scan feature" className="phone-screen" />
+              <img src="/assets/mockups/dropok-products.png" alt="Dropok products" className="phone-screen" />
             </div>
             <div className="paint-blob blue-blob"></div>
           </div>
@@ -268,21 +265,18 @@ const Features = () => {
           <div className="visual-side">
             <div className="dual-phones">
               <div className="phone-mockup left-phone">
-                <img src="/assets/result1.png" alt="Style result 1" className="phone-screen" />
+                <img src="/assets/mockups/outfit-evaluation.png" alt="Outfit evaluation interface" className="phone-screen" />
               </div>
               <div className="phone-mockup right-phone">
-                <img src="/assets/result2.png" alt="Style result 2" className="phone-screen" />
+                <img src="/assets/mockups/outfit-of-the-day-categories.png" alt="Outfit of the day categories" className="phone-screen" />
               </div>
             </div>
             <div className="paint-blob purple-blob"></div>
             <div className="paint-blob cream-blob small"></div>
           </div>
           <div className="content-side">
-            <div className="feature-icon">
-              <img src="/assets/glasses.png" alt="Glasses" />
-            </div>
             <h2 className="feature-heading">
-              {t('features.analysis.title')} <span className="bold-style">{t('features.analysis.titleHighlight')}</span>
+              {t('features.analysis.title')} <span className="gradient-text">{t('features.analysis.titleHighlight')}</span>
             </h2>
             <p className="feature-description">
               {t('features.analysis.description')}
@@ -305,9 +299,6 @@ const Features = () => {
       >
         <div className="feature-content">
           <div className="content-side">
-            <div className="feature-icon pulsing">
-              <img src="/assets/chat.svg" alt="Chat" />
-            </div>
             <h2 className="feature-heading">
               {t('features.ai.title')} <span className="gradient-text ai-gradient">{t('features.ai.titleHighlight')}</span>
             </h2>

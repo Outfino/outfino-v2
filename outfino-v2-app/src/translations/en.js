@@ -17,34 +17,37 @@ const en = {
     aiAdvice: "AI ADVICE",
     downloadApp: "DOWNLOAD",
     aboutOutfino: "ABOUT OUTFINO",
-    partners: "PARTNERS"
+    partners: "PARTNERS",
+    awards: "AWARDS",
+    news: "NEWS",
+    features: "FEATURES",
+    aboutApp: "ABOUT THE APP"
   },
   hero: {
-    title: "Elevate Your",
-    titleHighlight: "Style",
-    titleSuffix: "with Outfino",
-    subtitle: "Discover Fashion Designed for You.",
+    title: "We're writing the next",
+    titleHighlight: "streetwear",
+    titleSuffix: "story",
+    subtitle: "Be part of our story.",
     getStarted: "Get Started",
     learnMore: "Learn More",
     styleTips: [
-      "Throw in a lightweight scarf for extra style points.",
-      "Consider khaki shorts for warmer days.",
-      "Mix it up with some boat shoes to lean into the nautical theme",
-      "Add a classic watch to complete your refined look."
+      "Air Jordan 1 Retro High OG Chicago Lost And Found = instant G.O.A.T.",
+      "Add a Nike Tee to this, and you'll elevate your look 🔥",
+      "Layer an oversize shirt over the hoodie – effortless drip achieved."
     ],
     scrollDown: "Scroll Down",
     aboutButton: "About Outfino"
   },
   features: {
     scan: {
-      title: "Scan Your",
-      titleHighlight: "Style",
-      description: "Effortlessly capture and analyze your unique style wherever you are with our quick scan feature. Anytime, anywhere—discover personalized fashion insights designed just for you!"
+      title: "🛍️ Drops & ",
+      titleHighlight: "Brands",
+      description: "Cop the sickest drops! Browse limited pieces from the biggest brands and shop directly from the app. Fresh releases, exclusive items and instant cops – everything that matters in streetwear, all in one place."
     },
     analysis: {
-      title: "Let's get to know your",
-      titleHighlight: "actual style",
-      description: "Discover styles that match your personality. We analyze your preferences to help you find outfits that reflect your unique taste.",
+      title: "👕 Outfit of the ",
+      titleHighlight: "Day",
+      description: "Take a photo of your fit and compete in any of 11 categories – from streetwear to vintage to minimal. Compare your style with others, check out your friends' outfits, discover new looks and get inspired daily!",
       tags: {
         streetwear: "STREETWEAR",
         casual: "CASUAL", 
@@ -53,8 +56,8 @@ const en = {
       }
     },
     ai: {
-      title: "Get advice from the",
-      titleHighlight: "AI",
+      title: "Meet our AI",
+      titleHighlight: "model",
       description: "Receive personalized fashion tips instantly. Let our AI suggest outfits tailored just for you.",
       chatMessages: {
         casual: "Try a relaxed-fit white tee with dark denim and fresh sneakers. Layer with a lightweight bomber for that perfect casual Friday vibe.",
@@ -89,19 +92,19 @@ const en = {
     title: "OUR AWARDS",
     items: {
       topStartup: {
-        title: "Top Startup",
-        description: "Recognized as one of the top innovative startups in fashion technology",
-        year: "2024"
+        title: "#17 in AI",
+        description: "Ranked #17 in F6S Top AI Companies list",
+        year: "2025"
       },
       innovation: {
-        title: "Innovation Award", 
-        description: "Excellence in AI-powered fashion personalization",
-        year: "2024"
+        title: "#1 in Fashion", 
+        description: "Ranked #1 in F6S Top Fashion Companies list",
+        year: "2025"
       },
       bestDesign: {
         title: "Best App Design",
         description: "Outstanding user experience and interface design", 
-        year: "2024"
+        year: "2025"
       }
     },
     viewOnF6S: "VIEW ON F6S"

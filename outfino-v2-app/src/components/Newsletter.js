@@ -110,7 +110,7 @@ const Newsletter = () => {
 
 
   return (
-    <section className="newsletter-section" ref={containerRef}>
+    <section id="news" className="newsletter-section" ref={containerRef}>
       <div className="newsletter-container">
         <h2 className="newsletter-title">
           <span className="title-main">{t('newsletter.title')}</span>

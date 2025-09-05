@@ -54,7 +54,7 @@ const Navigation = () => {
       if (navigationTimeoutRef.current) return;
 
       // Determine active section based on scroll position
-      const sections = ['hero', 'scan', 'partners', 'analysis', 'advice', 'support'];
+      const sections = ['hero', 'scan', 'analysis', 'advice', 'awards', 'news'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -100,9 +100,9 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { id: 'about', label: t('navigation.aboutOutfino'), action: () => scrollToSection('scan') },
-    { id: 'partners', label: t('navigation.partners'), action: () => scrollToSection('partners') },
-    { id: 'support', label: t('navigation.support').toUpperCase(), action: () => scrollToSection('support') },
+    { id: 'features', label: t('navigation.aboutApp'), action: () => scrollToSection('scan') },
+    { id: 'awards', label: t('navigation.awards'), action: () => scrollToSection('awards') },
+    { id: 'news', label: t('navigation.news'), action: () => scrollToSection('news') },
     { 
       id: 'download', 
       label: t('navigation.downloadApp'), 
@@ -137,7 +137,7 @@ const Navigation = () => {
               ) : (
                 <button
                   key={item.id}
-                  className={`nav-link ${(item.id === 'about' && (activeSection === 'scan' || activeSection === 'analysis' || activeSection === 'advice')) || activeSection === item.id ? 'active' : ''}`}
+                  className={`nav-link ${(item.id === 'features' && (activeSection === 'scan' || activeSection === 'analysis' || activeSection === 'advice')) || activeSection === item.id ? 'active' : ''}`}
                   onClick={item.action}
                 >
                   {item.label}
@@ -177,7 +177,7 @@ const Navigation = () => {
             ) : (
               <button
                 key={item.id}
-                className={`mobile-nav-link ${(item.id === 'about' && (activeSection === 'scan' || activeSection === 'analysis' || activeSection === 'advice')) || activeSection === item.id ? 'active' : ''}`}
+                className={`mobile-nav-link ${(item.id === 'features' && (activeSection === 'scan' || activeSection === 'analysis' || activeSection === 'advice')) || activeSection === item.id ? 'active' : ''}`}
                 onClick={item.action}
               >
                 {item.label}

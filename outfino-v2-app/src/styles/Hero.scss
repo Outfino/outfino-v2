@@ -56,6 +56,29 @@
     }
   }
 
+  // Bottom gradient shadow for smooth transition
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.1) 10%,
+      rgba(0, 0, 0, 0.2) 25%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.6) 55%,
+      rgba(0, 0, 0, 0.8) 70%,
+      rgba(0, 0, 0, 0.95) 85%,
+      #000000 100%
+    );
+    z-index: 6;
+    pointer-events: none;
+  }
+
   // Paint Splatter Effects Layer
   .paint-splatter-layer {
     position: absolute;
@@ -248,12 +271,13 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    z-index: 5;
+    z-index: 100;
     transition: opacity 0.3s ease !important;
     opacity: 1;
     
     &.hidden {
       opacity: 0 !important;
+      pointer-events: none;
     }
 
     .scroll-text {
